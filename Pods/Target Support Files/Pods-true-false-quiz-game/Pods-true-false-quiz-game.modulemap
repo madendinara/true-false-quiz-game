@@ -1,0 +1,6 @@
+framework module Pods_true_false_quiz_game {
+  umbrella header "Pods-true-false-quiz-game-umbrella.h"
+
+  export *
+  module * { export * }
+}

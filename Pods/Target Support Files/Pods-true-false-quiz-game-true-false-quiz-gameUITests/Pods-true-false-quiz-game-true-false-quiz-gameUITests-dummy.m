@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_true_false_quiz_game_true_false_quiz_gameUITests : NSObject
+@end
+@implementation PodsDummy_Pods_true_false_quiz_game_true_false_quiz_gameUITests
+@end
