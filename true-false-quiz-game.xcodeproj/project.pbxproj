@@ -19,6 +19,9 @@
 		9C58F90227711F0A003B9DC2 /* true_false_quiz_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58F90127711F0A003B9DC2 /* true_false_quiz_gameTests.swift */; };
 		9C58F90C27711F0A003B9DC2 /* true_false_quiz_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58F90B27711F0A003B9DC2 /* true_false_quiz_gameUITests.swift */; };
 		9C58F90E27711F0A003B9DC2 /* true_false_quiz_gameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58F90D27711F0A003B9DC2 /* true_false_quiz_gameUITestsLaunchTests.swift */; };
+		9CC21F9B2771260D0052F58E /* QuizViewController+GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC21F9A2771260D0052F58E /* QuizViewController+GameLogic.swift */; };
+		9CC21F9E277127130052F58E /* QuizViewController+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC21F9D277127130052F58E /* QuizViewController+State.swift */; };
+		9CC21FA02771271A0052F58E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC21F9F2771271A0052F58E /* Question.swift */; };
 		E648E50245C538947D0EE105 /* Pods_true_false_quiz_game_true_false_quiz_gameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D12528A0CA5CC5EACB81152 /* Pods_true_false_quiz_game_true_false_quiz_gameUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,9 @@
 		9C58F90727711F0A003B9DC2 /* true-false-quiz-gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "true-false-quiz-gameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C58F90B27711F0A003B9DC2 /* true_false_quiz_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = true_false_quiz_gameUITests.swift; sourceTree = "<group>"; };
 		9C58F90D27711F0A003B9DC2 /* true_false_quiz_gameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = true_false_quiz_gameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9CC21F9A2771260D0052F58E /* QuizViewController+GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizViewController+GameLogic.swift"; sourceTree = "<group>"; };
+		9CC21F9D277127130052F58E /* QuizViewController+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizViewController+State.swift"; sourceTree = "<group>"; };
+		9CC21F9F2771271A0052F58E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		9D12528A0CA5CC5EACB81152 /* Pods_true_false_quiz_game_true_false_quiz_gameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_true_false_quiz_game_true_false_quiz_gameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EEEFC28F197024D1044409 /* Pods_true_false_quiz_gameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_true_false_quiz_gameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB03E1F90B2F7B1E43D85D2F /* Pods-true-false-quiz-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-true-false-quiz-game.debug.xcconfig"; path = "Target Support Files/Pods-true-false-quiz-game/Pods-true-false-quiz-game.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		9C58F8E627711F07003B9DC2 /* true-false-quiz-game */ = {
 			isa = PBXGroup;
 			children = (
+				9CC21F9C277127040052F58E /* Model */,
 				9CC21F99277120A80052F58E /* Controller */,
 				9C58F8E727711F07003B9DC2 /* AppDelegate.swift */,
 				9C58F8E927711F07003B9DC2 /* SceneDelegate.swift */,
@@ -164,8 +171,18 @@
 			isa = PBXGroup;
 			children = (
 				9C58F8EB27711F07003B9DC2 /* QuizViewController.swift */,
+				9CC21F9A2771260D0052F58E /* QuizViewController+GameLogic.swift */,
+				9CC21F9D277127130052F58E /* QuizViewController+State.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9CC21F9C277127040052F58E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CC21F9F2771271A0052F58E /* Question.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C40D93123BC549619AAFFB77 /* Frameworks */ = {
@@ -417,9 +434,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC21F9B2771260D0052F58E /* QuizViewController+GameLogic.swift in Sources */,
 				9C58F8F227711F07003B9DC2 /* true_false_quiz_game.xcdatamodeld in Sources */,
 				9C58F8EC27711F07003B9DC2 /* QuizViewController.swift in Sources */,
+				9CC21F9E277127130052F58E /* QuizViewController+State.swift in Sources */,
 				9C58F8E827711F07003B9DC2 /* AppDelegate.swift in Sources */,
+				9CC21FA02771271A0052F58E /* Question.swift in Sources */,
 				9C58F8EA27711F07003B9DC2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

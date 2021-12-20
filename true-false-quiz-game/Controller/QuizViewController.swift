@@ -10,13 +10,16 @@ import SnapKit
 
 class QuizViewController: UIViewController {
 
+    // MARK: - Internal properties
+    var timer: Timer?
+    var state = State(questions: questions)
+
     // MARK: - Properties
-    private lazy var countsView: UIView = {
+    public lazy var countsView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
         return view
     }()
-    private lazy var timeProgressLabel: UILabel = {
+    public lazy var timeProgressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.layer.borderColor = UIColor.black.cgColor
@@ -26,7 +29,7 @@ class QuizViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 24, weight: .light)
         return label
     }()
-    private lazy var questionLabel: UILabel = {
+    public lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 32)
         label.text = "Question"
@@ -34,25 +37,23 @@ class QuizViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-    private lazy var trueButton: UIButton = {
+    public lazy var trueButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .green
         button.setTitle("👍True", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
-        button.showsTouchWhenHighlighted = true
         return button
     }()
-    private lazy var falseButton: UIButton = {
+    public lazy var falseButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .red
         button.setTitle("👎False", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
-        button.showsTouchWhenHighlighted = true
         return button
     }()
-    private lazy var buttonsStackView: UIStackView = {
+    public lazy var buttonsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [trueButton, falseButton])
         stackView.distribution = .fillEqually
         stackView.axis = .horizontal
@@ -65,6 +66,7 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        startGame()
     }
     
     // MARK: - Methods
