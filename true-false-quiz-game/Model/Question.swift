@@ -13,20 +13,24 @@ struct Question {
 }
 
 let questions = [
-  ("As far as has ever been reported, no-one has ever seen an ostrich bury its head in the sand.", true),
-  ("Approximately one quarter of human bones are in the feet.", true),
-  ("Popeye’s nephews were called Peepeye, Poopeye, Pipeye and Pupeye.", true),
-  ("In ancient Rome, a special room called a vomitorium was available for diners to purge food in during meals.", false),
-  ("The average person will shed 10 pounds of skin during their lifetime.", false),
-  ("The Great Wall Of China is visible from the moon.", false),
-  ("Virtually all Las Vegas gambling casinos ensure that they have no clocks.", true),
-  ("Risotto is a common Italian rice dish.", true),
-  ("The prefix \"mega-\" represents one million.", true),
-  ("The \"Forbidden City\" is in Beijing.", true),
-  ("Hurricanes and typhoons are the same thing.", true),
-  ("In Shakespeare's play, Hamlet commits suicide.", false),
-  ("An American was the first man in space.", false),
-  ("The \"China Syndrome\" is what hostages experience when they begin to feel empathy for their captors.", false),
-  ("Other than water, coffee is the world's most popular drink.", true)
+  ("People may sneeze or cough while sleeping deeply.", false),
+  ("Electrons move faster than the speed of light.", false),
+  ("The Mona Liza was stolen from the Louvre in 1911.", true),
+  ("Light travels in a straight line.", true),
+  ("The Big Apple is a nickname given to Washington D.C in 1971.", false),
+  
+  ("All introverts are shy and socially anxious.", false),
+  ("The percentage of students in the US who have taken loans to get through college is declining. ", false),
+  
+  ("A credit card and a debit card are the same.", false),
+  
+  ("Ethereum is the second-largest cryptocurrency after Bitcoin.", true),
+  ("Women usually reach the earning-peak of their career when they are younger than men.", true),
+  
+  ("The Atlantic Ocean is the warmest in the world.", false),
+  ("When the Eiffel Tower was unveiled, the Parisian art community hated it.", true),
+  ("There are more ancient pyramids in Sudan than in Egypt.", true),
+  ("The Great Wall of China is visible from space.", false),
+  ("There are three rivers in Saudi Arabia.", false)
 ].map(Question.init)
 

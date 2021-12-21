@@ -22,7 +22,7 @@ class QuizViewController: UIViewController {
     public lazy var timeProgressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.layer.borderColor = UIColor.black.cgColor
+        label.layer.borderColor = UIColor.white.cgColor
         label.text = "00:15"
         label.backgroundColor = .green
         label.textAlignment = .center
@@ -32,6 +32,7 @@ class QuizViewController: UIViewController {
     public lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 32)
+        label.textColor = .black
         label.text = "Question"
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -43,6 +44,7 @@ class QuizViewController: UIViewController {
         button.setTitle("👍True", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        button.addTarget(self, action: #selector(handleAnswer), for: .touchUpInside)
         return button
     }()
     public lazy var falseButton: UIButton = {
@@ -51,6 +53,7 @@ class QuizViewController: UIViewController {
         button.setTitle("👎False", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        button.addTarget(self, action: #selector(handleAnswer), for: .touchUpInside)
         return button
     }()
     public lazy var buttonsStackView: UIStackView = {
@@ -60,6 +63,15 @@ class QuizViewController: UIViewController {
         stackView.spacing = 16
         stackView.alignment = .center
         return stackView
+    }()
+    lazy var messageLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.numberOfLines = 0
+        label.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 48, weight: .semibold)
+        label.alpha = 0
+        return label
     }()
     
     // MARK: - Lifecycle
@@ -71,10 +83,11 @@ class QuizViewController: UIViewController {
     
     // MARK: - Methods
     func configureView() {
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        navigationController?.view.addSubview(messageLabel)
         [countsView, timeProgressLabel, questionLabel, buttonsStackView].forEach { view.addSubview($0) }
         makeConstaints()
     }
@@ -106,6 +119,9 @@ class QuizViewController: UIViewController {
             make.leading.trailing.equalTo(questionLabel)
             make.top.equalTo(questionLabel.snp.bottom).offset(16)
             make.height.equalTo(80)
+        }
+        messageLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 
