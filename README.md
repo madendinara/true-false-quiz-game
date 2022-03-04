@@ -9,6 +9,6 @@ Quiz game with a true/false answers.
 <img src="https://user-images.githubusercontent.com/22132871/155981185-ee27bce6-28a3-4bad-8812-213d8e8adf06.png" height="700">
 </p>
 
-<video width="320" height="240" controls>
+<video width="320" height="240">
   <source src="(https://youtu.be/y3QupEbiefs" type="video/mp4">
 </video>
